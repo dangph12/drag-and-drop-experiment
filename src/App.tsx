@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import {
   DndContext,
-  DragEndEvent,
-  DragMoveEvent,
-  DragCancelEvent
+  type DragEndEvent,
+  type DragMoveEvent
 } from '@dnd-kit/core';
 import Droppable from './Droppable';
 import Draggable from './Draggable';
@@ -106,7 +105,7 @@ const App = () => {
     setPreview(null);
   };
 
-  const handleDragCancel = (_: DragCancelEvent) => {
+  const handleDragCancel = () => {
     setPreview(null);
   };
 
