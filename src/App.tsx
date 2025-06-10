@@ -31,7 +31,8 @@ interface Preview {
 const App = () => {
   const [items, setItems] = useState<GridItem[]>([
     { id: 'item-1', width: 2, height: 3, row: 0, col: 0, rotation: 0 },
-    { id: 'item-2', width: 1, height: 2, row: 5, col: 5, rotation: 0 }
+    { id: 'item-2', width: 1, height: 2, row: 5, col: 5, rotation: 0 },
+    { id: 'item-3', width: 1, height: 2, row: 4, col: 3, rotation: 0 }
   ]);
 
   const [preview, setPreview] = useState<Preview | null>(null);
@@ -90,7 +91,6 @@ const App = () => {
     const item = items.find(it => it.id === active.id);
     if (!item || !preview) return;
 
-    // If valid preview exists, update position
     setItems(prev =>
       prev.map(it =>
         it.id === item.id
@@ -165,7 +165,7 @@ const App = () => {
               width: preview.width * CELL_SIZE,
               height: preview.height * CELL_SIZE,
               backgroundColor: 'rgba(0, 128, 255, 0.3)',
-              border: '2px dashed #0077cc',
+              border: '1px dashed #0077cc',
               pointerEvents: 'none',
               zIndex: 50
             }}

@@ -17,8 +17,7 @@ const Droppable: React.FC<DroppableProps> = ({ id, children }) => {
         display: 'grid',
         gridTemplateColumns: 'repeat(12, 1fr)',
         gridTemplateRows: 'repeat(12, 1fr)',
-        gap: '1px',
-        backgroundColor: '#ccc',
+        backgroundColor: '#000',
         position: 'relative'
       }}
     >
@@ -29,7 +28,8 @@ const Droppable: React.FC<DroppableProps> = ({ id, children }) => {
             width: '100%',
             height: '100%',
             backgroundColor: '#eee',
-            border: '1px solid #bbb'
+            border: '1px solid #ccc',
+            boxSizing: 'border-box'
           }}
         />
       ))}
